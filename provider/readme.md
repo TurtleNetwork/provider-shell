@@ -14,7 +14,7 @@ ProviderKeeper implements a Signature Provider for [Signer](https://github.com/w
 To install Signer and ProviderKeeper libraries use
 
 ```bash
-npm i @waves/signer @waves/provider-keeper
+npm i @turtlenetwork/signer @waves/provider-keeper
 ```
 
 ### Library initialization
@@ -24,7 +24,7 @@ Add library initialization to your app.
 * For Testnet:
 
    ```js
-   import { Signer } from '@waves/signer';
+   import { Signer } from '@turtlenetwork/signer';
    import { ProviderKeeper } from '@waves/provider-keeper';
 
    const signer = new Signer({
@@ -41,7 +41,7 @@ Add library initialization to your app.
 * For Mainnet:
 
    ```js
-   import { Signer } from '@waves/signer';
+   import { Signer } from '@turtlenetwork/signer';
    import { ProviderKeeper } from '@waves/provider-keeper';
 
    const signer = new Signer();

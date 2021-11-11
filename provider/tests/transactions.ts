@@ -12,7 +12,7 @@ import {
     SignerSetScriptTx,
     SignerSponsorshipTx,
     SignerTransferTx,
-} from '@waves/signer';
+} from '@turtlenetwork/signer';
 import { TRANSACTION_TYPE } from '@waves/ts-types';
 
 const assetId = '7sP5abE9nGRwZxkgaEXgkQDZ3ERBcm9PLHixaUE5SYoT';

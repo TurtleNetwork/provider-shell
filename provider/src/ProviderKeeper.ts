@@ -1,19 +1,19 @@
-import { AuthEvents, ConnectOptions, Handler, Provider, SignedTx, SignerTx, TypedData, UserData } from '@waves/signer';
+import { AuthEvents, ConnectOptions, Handler, Provider, SignedTx, SignerTx, TypedData, UserData } from '@turtlenetwork/signer';
 import { EventEmitter } from 'typed-ts-events';
 import { stringToBytes, base64Encode } from '@waves/ts-lib-crypto';
 import { keeperTxFactory, signerTxFactory } from './adapter';
 
 export class ProviderKeeper implements Provider {
     public user: UserData | null = null;
-    private readonly _authData: WavesKeeper.IAuthData;
-    private _api!: WavesKeeper.TWavesKeeperApi;
+    private readonly _authData: TurtleShell.IAuthData;
+    private _api!: TurtleShell.TTurtleShellApi;
     private _options: ConnectOptions = {
         NETWORK_BYTE: 'W'.charCodeAt(0),
         NODE_URL: 'https://nodes.wavesnodes.com',
     };
     private readonly _emitter: EventEmitter<AuthEvents> = new EventEmitter<AuthEvents>();
 
-    constructor(authData: WavesKeeper.IAuthData) {
+    constructor(authData: TurtleShell.IAuthData) {
         this._authData = authData;
     }
 
@@ -39,9 +39,9 @@ export class ProviderKeeper implements Provider {
         this._options = options;
 
         const poll = (resolve) => {
-            if (!!window.WavesKeeper) {
+            if (!!window.TurtleShell) {
                 resolve(
-                    window.WavesKeeper.initialPromise.then((api) => {
+                    window.TurtleShell.initialPromise.then((api) => {
                         this._api = api;
                     })
                 );
@@ -76,7 +76,7 @@ export class ProviderKeeper implements Provider {
         return this._api
             .signCustomData({
                 version: 2,
-                data: data as WavesKeeper.TTypedData[],
+                data: data as TurtleShell.TTypedData[],
             })
             .then((data) => data.signature);
     }
@@ -90,7 +90,7 @@ export class ProviderKeeper implements Provider {
         }
 
         return this._api
-            .signTransactionPackage(toSign.map((tx) => keeperTxFactory(tx)) as WavesKeeper.TSignTransactionPackageData)
+            .signTransactionPackage(toSign.map((tx) => keeperTxFactory(tx)) as TurtleShell.TSignTransactionPackageData)
             .then((data) => data.map((tx) => signerTxFactory(tx))) as Promise<SignedTx<T>>;
     }
 }

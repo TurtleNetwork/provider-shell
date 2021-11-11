@@ -8,11 +8,11 @@
   "license": "ISC",
   "dependencies": {
     "@waves/marshall": "^0.14.0",
-    "@waves/signer": "^1.0.3",
+    "@turtlenetwork/signer": "^1.0.3",
     "babel-core": "^6.26.3"
   },
   "devDependencies": {
-    "@waves/waveskeeper-types": "^0.2.0",
+    "@turtlenetwork/turtleshell-types": "^0.2.0",
     "copy-webpack-plugin": "^9.0.1",
     "html-webpack-plugin": "^5.3.2",
     "html-webpack-tags-plugin": "^3.0.1",

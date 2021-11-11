@@ -9,13 +9,13 @@ func default() = [ StringEntry("default-call-id", i.transactionId.toBase58String
 func callWithPaymentsButNoArgs() = {
   let txId = i.transactionId.toBase58String()
   func addPaymentInfo(acc: List[StringEntry], index: Int) = {
-    if index >= i.payments.size() 
-    then acc 
+    if index >= i.payments.size()
+    then acc
     else {
       let pmt = i.payments[index]
         let asset = match pmt.assetId {
         case id: ByteVector => assetInfo(id).value().name + " (" + id.toBase58String() + ")"
-        case waves: Unit => "WAVES"
+        case waves: Unit => "TN"
       }
       acc :+ StringEntry(txId + "_" + index.toString(), pmt.amount.toString() + " " + asset)
     }

@@ -1,4 +1,4 @@
-import { Signer } from '@waves/signer';
+import { Signer } from '@turtlenetwork/signer';
 import { ProviderKeeper } from '@waves/provider-keeper';
 import { json } from '@waves/marshall';
 import { TRANSACTION_TYPE } from '@waves/ts-types';

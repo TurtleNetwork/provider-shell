@@ -23,7 +23,7 @@ import {
     SPONSORSHIP,
     TRANSFER,
 } from './transactions';
-import { SignerTx } from '@waves/signer';
+import { SignerTx } from '@turtlenetwork/signer';
 
 const s = 1000,
     m = 60000,

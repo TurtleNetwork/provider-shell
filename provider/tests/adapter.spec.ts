@@ -16,7 +16,7 @@ import {
     SignerTransferTx,
     SignerTx,
     SignerTxToSignedTx,
-} from '@waves/signer';
+} from '@turtlenetwork/signer';
 import { expect } from 'chai';
 import { TRANSACTION_TYPE, TransactionMap } from '@waves/ts-types';
 import {
