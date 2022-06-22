@@ -10,10 +10,10 @@
     "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
-      "@waves/provider-keeper": [
+      "@turtlenetwork/provider-keeper": [
         "./provider/src"
       ],
-      "@waves/provider-keeper/*": [
+      "@turtlenetwork/provider-keeper/*": [
         "./provider/src/*"
       ]
     },
